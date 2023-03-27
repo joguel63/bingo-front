@@ -1,4 +1,5 @@
-import { ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
+import { Navbar } from "@core/components";
 import { UserRegistration, BingoBucket } from "@core/modules";
 import { AppContextProvider } from "@core/contexts/app-context-provider";
 import { BingoCellType, BingoColumnType } from "@core/types";
@@ -151,9 +152,12 @@ function App() {
   return (
     <AppContextProvider>
       <ThemeProvider theme={theme}>
-        <UserRegistration />
-        <div style={{ marginTop: 50 }} />
-        <BingoBucket columns={collumns} />
+        <Navbar />
+        <Box marginTop="64px">
+          <UserRegistration />
+          <div style={{ marginTop: 50 }} />
+          <BingoBucket columns={collumns} />
+        </Box>
       </ThemeProvider>
     </AppContextProvider>
   );
